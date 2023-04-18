@@ -7,6 +7,27 @@ defined('ABSPATH') || exit;
 
 define( 'RT_SLIDER__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
+//create DB table
+function rt_slider_create_table() {
+    global $wpdb;
+
+    $table_name = $wpdb->prefix . 'rt_slider_tbl';
+    $charset_collate = $wpdb->get_charset_collate();
+
+    if ($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
+        $sql = "CREATE TABLE $table_name (
+            id int(11) NOT NULL AUTO_INCREMENT,
+            image_name varchar(255) NOT NULL,
+            PRIMARY KEY (id)
+        ) $charset_collate;";
+
+        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+        dbDelta($sql);
+    }
+}
+register_activation_hook(__FILE__, 'rt_slider_create_table');
+
+
 // Load plugin scripts and styles
 function rt_slider_enqueue_scripts() {
   wp_enqueue_style('rt-slider-style', plugin_dir_url(__FILE__) . 'assets/css/rt-my-slider-style.css');
@@ -22,7 +43,7 @@ function rt_slider_register_menu() {
 }
 add_action('admin_menu', 'rt_slider_register_menu');
 
-// Plugin page HTML
+//Connect plugin page HTML
 function rt_slider_page() {
   require_once(RT_SLIDER__PLUGIN_DIR . 'templates/main-page.php' );
 }
