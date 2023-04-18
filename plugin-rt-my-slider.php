@@ -6,6 +6,7 @@
 defined('ABSPATH') || exit;
 
 define( 'RT_SLIDER__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'RT_SLIDER__PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 //create DB table
 function rt_slider_create_table() {
@@ -47,3 +48,20 @@ add_action('admin_menu', 'rt_slider_register_menu');
 function rt_slider_page() {
   require_once(RT_SLIDER__PLUGIN_DIR . 'templates/main-page.php' );
 }
+
+function rt_slider_handler_callback() {
+if (isset($_POST['value'])){
+
+    if ($_POST['value'] === 'slider1') {
+        $slider_url = RT_SLIDER__PLUGIN_URL . 'assets/slider-img/slider1.jpg';
+    }
+    else if ($_POST['value'] === 'slider2') {
+        $slider_url = RT_SLIDER__PLUGIN_URL . 'assets/slider-img/slider2.jpg';
+    }
+    echo $slider_url;
+}
+	
+	wp_die();
+};
+add_action('wp_ajax_rt_slider', 'rt_slider_handler_callback');
+add_action('wp_ajax_nopriv_rt_slider', 'rt_slider_handler_callback');
