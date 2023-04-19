@@ -3,13 +3,11 @@
 if (isset($_POST['submit'])) {
 
     // Set the directory where the uploaded file will be stored
-    $target_dir = plugin_dir_path(__FILE__) . "uploads/";
-    // if (!file_exists($target_dir)) {
-    //     mkdir($target_dir, 0777, true);
-    // }
+    $target_dir = RT_SLIDER__PLUGIN_DIR . "uploads/";
+    
 
     // Get the full path to the uploaded file
-    $target_file = $target_dir . basename($_FILES["file"]["name"]);
+    $target_file = $target_dir . uniqid() . basename($_FILES["file"]["name"]);
 
     // Set the default value for $uploadOk to 1
     $uploadOk = 1;
@@ -54,6 +52,9 @@ if (isset($_POST['submit'])) {
         } else {
 
             // If there were no errors, attempt to move the uploaded file to the target directory
+            if (!file_exists($target_dir)) {
+                mkdir($target_dir, 0777, true);
+            }
             if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
                 echo "File " . htmlspecialchars(basename($_FILES["file"]["name"])) . " is uploaded!";
             } else {

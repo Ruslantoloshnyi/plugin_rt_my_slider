@@ -3,12 +3,13 @@
     <div id="rt-slider-container"></div>
 </div>
 
-
 <form id="upload-form" method="post" enctype="multipart/form-data">
     <label for="file-upload">Select file to upload:</label>
     <input type="file" id="file-upload" name="file">
     <button type="submit" name="submit">Upload</button>
 </form>
+
+<?php require_once(RT_SLIDER__PLUGIN_DIR . 'templates/uploads.php'); ?>
 
 <label for="slider-select">check slider</label>
 <select name="slider-select" id="slider-select">
