@@ -4,7 +4,6 @@ if (isset($_POST['submit'])) {
 
     // Set the directory where the uploaded file will be stored
     $target_dir = RT_SLIDER__PLUGIN_DIR . "uploads/";
-    
 
     // Get the full path to the uploaded file
     $target_file = $target_dir . uniqid() . basename($_FILES["file"]["name"]);
@@ -56,6 +55,25 @@ if (isset($_POST['submit'])) {
                 mkdir($target_dir, 0777, true);
             }
             if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+                global $wpdb;
+
+                $date = date('Y-m-d');
+                $table_name = $wpdb->prefix . 'rt_slider_tbl';
+
+                $wpdb->insert(
+                    $table_name,
+                    [
+                        'image_name' => basename($_FILES["file"]["name"]),
+                        'path'       => $target_file,
+                        'date'       => $date
+                    ],
+                    [
+                        '%s',
+                        '%s',
+                        '%s'
+                    ]
+                );
+
                 echo "File " . htmlspecialchars(basename($_FILES["file"]["name"])) . " is uploaded!";
             } else {
                 echo "An error occurred while uploading the file.";
