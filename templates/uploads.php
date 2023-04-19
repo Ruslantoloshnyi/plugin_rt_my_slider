@@ -6,7 +6,8 @@ if (isset($_POST['submit'])) {
     $target_dir = RT_SLIDER__PLUGIN_DIR . "uploads/";
 
     // Get the full path to the uploaded file
-    $target_file = $target_dir . uniqid() . basename($_FILES["file"]["name"]);
+    $uniq_name = uniqid() . basename($_FILES["file"]["name"]);
+    $target_file = $target_dir . $uniq_name;
 
     // Set the default value for $uploadOk to 1
     $uploadOk = 1;
@@ -64,7 +65,7 @@ if (isset($_POST['submit'])) {
                     $table_name,
                     [
                         'image_name' => basename($_FILES["file"]["name"]),
-                        'path'       => $target_file,
+                        'path'       => RT_SLIDER__PLUGIN_URL . 'uploads/' . $uniq_name,
                         'date'       => $date
                     ],
                     [

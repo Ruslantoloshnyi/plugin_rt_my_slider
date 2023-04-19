@@ -33,7 +33,9 @@ register_activation_hook(__FILE__, 'rt_slider_create_table');
 // Load plugin scripts and styles
 function rt_slider_enqueue_scripts() {
   wp_enqueue_style('rt-slider-style', plugin_dir_url(__FILE__) . 'assets/css/rt-my-slider-style.css');
+  wp_enqueue_style('rt-slider1-style', plugin_dir_url(__FILE__) . 'assets/css/rt-slider1-style.css');
   wp_enqueue_script('rt-slider-script', plugin_dir_url(__FILE__) . 'assets/js/rt-my-slider-script.js', array('jquery'), '1.0', true);
+  wp_enqueue_script('rt-slider1-script', plugin_dir_url(__FILE__) . 'assets/js/rt-slider1-script.js', array('jquery'), '1.0', true);
 
   wp_localize_script('rt-slider-script', 'myajax', array('ajaxurl' => admin_url('admin-ajax.php')));
 }
@@ -44,6 +46,8 @@ function rt_slider_register_menu() {
   add_menu_page('RT My Slider', 'RT My Slider', 'manage_options', 'rt-my-slider', 'rt_slider_page');
 }
 add_action('admin_menu', 'rt_slider_register_menu');
+
+require_once (RT_SLIDER__PLUGIN_DIR . 'templates/sliders-shortcode.php');
 
 //Connect plugin page HTML
 function rt_slider_page() {
