@@ -86,7 +86,10 @@ function rt_slider_review_image()
     $table_name = $wpdb->prefix . 'rt_slider_tbl';
     $slides = $wpdb->get_results("SELECT * FROM $table_name");
     foreach ($slides as $result) : ?>
-      <img src="<?php echo $result->path; ?>" height="100px" width="150px" alt="">
+      <div class="review-block">
+        <button class="btn-remove-img">remove</button>
+        <img src="<?php echo $result->path; ?>" height="100px" width="150px" alt="">
+      </div>
     <?php endforeach; ?>
   </div>
 <?php
