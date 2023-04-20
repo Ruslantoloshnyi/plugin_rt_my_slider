@@ -9,6 +9,8 @@
     <button type="submit" name="submit">Upload</button>
 </form>
 
+<?php rt_slider_review_image(); ?>
+
 <?php require_once(RT_SLIDER__PLUGIN_DIR . 'templates/uploads.php'); ?>
 
 <label for="slider-select">check slider</label>
