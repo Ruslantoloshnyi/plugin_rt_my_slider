@@ -64,7 +64,7 @@ if (isset($_POST['submit'])) {
                 $wpdb->insert(
                     $table_name,
                     [
-                        'image_name' => basename($_FILES["file"]["name"]),
+                        'image_name' => $uniq_name,
                         'path'       => RT_SLIDER__PLUGIN_URL . 'uploads/' . $uniq_name,
                         'date'       => $date
                     ],

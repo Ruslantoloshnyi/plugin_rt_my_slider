@@ -72,6 +72,29 @@ function rt_slider_handler_callback()
     echo $slider_url;
   }
 
+  if (isset($_POST['image_url'])) {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'rt_slider_tbl';
+    $image_url = $_POST['image_url'];
+    $slide_row = $wpdb->get_row("SELECT * FROM $table_name WHERE `path` = '$image_url'");
+
+    if (!$slide_row) {
+      wp_die('Slide id not found');
+    }
+
+    $result = $wpdb->delete($table_name, ['id' => $slide_row->id]);
+    if (!$result) {
+      wp_die('Failed to delete slide from database');
+    }
+
+    $delete_dir_image = unlink(RT_SLIDER__PLUGIN_DIR . 'uploads/' . $slide_row->image_name);
+    if (!$delete_dir_image) {
+      wp_die('Failed to delete slide image from server');
+    }
+
+    echo 'Slide image deleted successfully';
+  }
+
   wp_die();
 };
 add_action('wp_ajax_rt_slider', 'rt_slider_handler_callback');

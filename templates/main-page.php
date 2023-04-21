@@ -20,7 +20,12 @@
 </select>
 
 <div class="slider-image">
-    <img src="<?php echo RT_SLIDER__PLUGIN_URL . 'assets/slider-img/slider1.jpg'; ?>" alt="">
+    <img id="" src="<?php echo RT_SLIDER__PLUGIN_URL . 'assets/slider-img/slider1.jpg'; ?>" alt="">
 </div>
 
 <?php echo do_shortcode('[rt_slider]'); ?>
+
+
+
+
+
