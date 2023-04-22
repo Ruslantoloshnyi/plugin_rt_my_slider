@@ -9,7 +9,7 @@
     height: 100%;
     display: flex;
     flex-wrap: nowrap;
-    /* overflow: hidden; */
+    overflow: hidden;
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
