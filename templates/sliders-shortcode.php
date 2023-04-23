@@ -8,7 +8,7 @@ function rt_slider_with_controls_shortcode() {
     $table_name = $wpdb->prefix . 'rt_slider_tbl';
     $slides = $wpdb->get_results("SELECT * FROM $table_name");
 
-    // Output slider HTML
+    // Output slider HTML   
 ?>
     <div class="slider-with-controls">
         <div class="slider">
@@ -30,3 +30,37 @@ function rt_slider_with_controls_shortcode() {
     return ob_get_clean();
 }
 add_shortcode('rt_slider_with_controls', 'rt_slider_with_controls_shortcode');
+
+function rt_slider_with_indicators_shortcode() {
+    ob_start();
+
+    // Get images from database
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'rt_slider_tbl';
+    $slides = $wpdb->get_results("SELECT * FROM $table_name");
+?>
+
+    <div class="slider-with-indicators">
+        <div class="slider2">
+            <div class="slider2-list">
+                <div class="slider2-track">
+                    <?php foreach ($slides as $slide) : ?>
+                        <div class="slide2"><img src="<?php echo $slide->path; ?>" alt=""></div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+            <div class="slider2-arrows">
+                <button type="button" class="prev2">&lt;</button>
+                <button type="button" class="next2">&gt;</button>
+            </div>
+            <div class="slider2-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+<?php
+    return ob_get_clean();
+}
+add_shortcode('rt_slider_with_indicators', 'rt_slider_with_indicators_shortcode');

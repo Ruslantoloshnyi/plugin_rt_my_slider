@@ -24,6 +24,7 @@
 </div>
 
 <?php echo do_shortcode('[rt_slider_with_controls]'); ?>
+<?php echo do_shortcode('[rt_slider_with_indicators]'); ?>
 
 
 
