@@ -15,15 +15,16 @@
 
 <label for="slider-select">check slider</label>
 <select name="slider-select" id="slider-select">
-    <option value="slider1">slider1</option>
+    <option value="slider-with-controls">slider-with-controls</option>
     <option value="slider2">slider2</option>
 </select>
 
 <div class="slider-image">
-    <img id="" src="<?php echo RT_SLIDER__PLUGIN_URL . 'assets/slider-img/slider1.jpg'; ?>" alt="">
+    <img id="" src="<?php echo RT_SLIDER__PLUGIN_URL . 'assets/slider-img/Slider-with-controls.jpg'; ?>" alt="">
 </div>
 
-<?php echo do_shortcode('[rt_slider]'); ?>
+<?php echo do_shortcode('[rt_slider_with_controls]'); ?>
+
 
 
 

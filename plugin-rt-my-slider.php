@@ -64,8 +64,8 @@ function rt_slider_handler_callback()
 {
   if (isset($_POST['value'])) {
 
-    if ($_POST['value'] === 'slider1') {
-      $slider_url = RT_SLIDER__PLUGIN_URL . 'assets/slider-img/slider1.jpg';
+    if ($_POST['value'] === 'slider-with-controls') {
+      $slider_url = RT_SLIDER__PLUGIN_URL . 'assets/slider-img/Slider-with-controls.jpg';
     } else if ($_POST['value'] === 'slider2') {
       $slider_url = RT_SLIDER__PLUGIN_URL . 'assets/slider-img/slider2.jpg';
     }
