@@ -8,6 +8,7 @@ const review_blocks = document.querySelectorAll('.review-block');
 const slider_with_controls = document.querySelector('.slider-with-controls');
 const slider_with_indicators = document.querySelector('.slider-with-indicators');
 const slider_image_div = document.querySelector('.slider-image');
+const shortcode = document.querySelector('.shortcode-review');
 
 slider_with_controls.style.visibility = 'hidden';
 slider_with_indicators.style.visibility = 'hidden';
@@ -63,19 +64,21 @@ slider_select.addEventListener('change', function () {
     if (slider_select.value == 'none') {
         slider_with_controls.style.display = 'none';
         slider_with_indicators.style.display = 'none';
-        slider_image_div.style.visibility = 'hidden';
+        slider_image_div.style.visibility = 'hidden';        
     }
     if (slider_select.value == 'slider-with-controls') {
         slider_with_controls.style.visibility = 'visible';
         slider_with_controls.style.display = 'block';
         slider_with_indicators.style.display = 'none';
         slider_image_div.style.display = 'block';
+        shortcode.textContent = '[rt_slider_with_controls]';
        }
-    if(slider_select.value == 'slider-with-indicators') {
+    if (slider_select.value == 'slider-with-indicators') {
         slider_with_controls.style.display = 'none';
         slider_with_indicators.style.visibility = 'visible';
         slider_with_indicators.style.display = 'block';
         slider_image_div.style.display = 'block';
+        shortcode.textContent = '[rt_slider_with_indicators]';
     }
 });
 
