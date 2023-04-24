@@ -15,11 +15,12 @@
 
 <label for="slider-select">check slider</label>
 <select name="slider-select" id="slider-select">
+    <option value="none">none</option>
     <option value="slider-with-controls">slider-with-controls</option>
-    <option value="slider2">slider2</option>
+    <option value="slider-with-indicators">slider-with-indicators</option>
 </select>
 
-<div class="slider-image">
+<div class="slider-image" style="display: none">
     <img id="" src="<?php echo RT_SLIDER__PLUGIN_URL . 'assets/slider-img/Slider-with-controls.jpg'; ?>" alt="">
 </div>
 

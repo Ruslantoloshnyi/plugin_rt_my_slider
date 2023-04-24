@@ -53,10 +53,7 @@ function rt_slider_with_indicators_shortcode() {
                 <button type="button" class="prev2">&lt;</button>
                 <button type="button" class="next2">&gt;</button>
             </div>
-            <div class="slider2-dots">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+            <div class="slider2-dots">                
             </div>
         </div>
     </div>
