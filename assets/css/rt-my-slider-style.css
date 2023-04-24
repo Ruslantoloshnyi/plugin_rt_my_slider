@@ -1,0 +1,67 @@
+/* main page style */
+
+.rt-slider-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.rt-slider-heading h1 {
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-size: 56px;
+    line-height: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+.rt-slider-form {
+    display: flex;
+    justify-content: center;
+    line-height: 100px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 22px;
+}
+
+.your {
+    display: flex;
+    margin-left: 50px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 45px;
+    line-height: 70px;
+}
+
+.review-image {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.review-block {
+    margin-right: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.rt-check-slider-label {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 22px;
+    line-height: 100px;
+}
+
+.rt-slider-show {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.shortcode-instruction p {
+    font-family: 'Montserrat';
+    font-style: normal;    
+    font-size: 18px;    
+}
