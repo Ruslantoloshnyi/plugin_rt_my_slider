@@ -1,6 +1,8 @@
 <?php
 
 function rt_slider_with_controls_shortcode() {
+    wp_enqueue_style('salcodes-with-controls-style');   
+    wp_enqueue_script('salcodes-with-controls-scripts');    
     ob_start();
 
     // Get images from database
@@ -32,6 +34,8 @@ function rt_slider_with_controls_shortcode() {
 add_shortcode('rt_slider_with_controls', 'rt_slider_with_controls_shortcode');
 
 function rt_slider_with_indicators_shortcode() {
+    wp_enqueue_style('salcodes-with-indicators-style');
+    wp_enqueue_script('salcodes-with-indicators-scripts');
     ob_start();
 
     // Get images from database

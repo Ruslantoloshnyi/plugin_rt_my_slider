@@ -46,6 +46,17 @@ function rt_slider_enqueue_scripts()
 }
 add_action('admin_init', 'rt_slider_enqueue_scripts');
 
+//Register style and scrypt for shortcode
+function salcodes_enqueue_scripts()
+{  
+    wp_register_style('salcodes-with-controls-style', plugin_dir_url(__FILE__) . 'assets/css/rt-slider1-style.css');
+    wp_register_style('salcodes-with-indicators-style', plugin_dir_url(__FILE__) . 'assets/css/rt-slider-with-indicators-style.css');
+    wp_register_script('salcodes-with-controls-scripts', plugin_dir_url(__FILE__) . 'assets/js/rt-slider1-script.js', array('jquery'), '1.0', true);
+    wp_register_script('salcodes-with-indicators-scripts', plugin_dir_url(__FILE__) . 'assets/js/rt-slider-with-indicators-script.js', array('jquery'), '1.0', true);  
+}
+add_action('wp_enqueue_scripts', 'salcodes_enqueue_scripts');
+
+
 // Register plugin page
 function rt_slider_register_menu()
 {
