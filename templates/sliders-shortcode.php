@@ -1,6 +1,8 @@
 <?php
 
 function rt_slider_with_controls_shortcode() {
+    
+    //Load scripts and styles
     wp_enqueue_style('salcodes-with-controls-style');   
     wp_enqueue_script('salcodes-with-controls-scripts');    
     ob_start();
@@ -34,6 +36,8 @@ function rt_slider_with_controls_shortcode() {
 add_shortcode('rt_slider_with_controls', 'rt_slider_with_controls_shortcode');
 
 function rt_slider_with_indicators_shortcode() {
+    
+    //Load scripts and styles
     wp_enqueue_style('salcodes-with-indicators-style');
     wp_enqueue_script('salcodes-with-indicators-scripts');
     ob_start();

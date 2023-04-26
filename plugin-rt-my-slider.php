@@ -1,9 +1,30 @@
 <?php
+/*
+Plugin Name: RT my slider
+Description: Add sliders to your page.
+Version:  1.0
+Author: Ruslan Toloshnyi
+*/
 
-/**
- * Plugin Name: RT My Slider
- */
+/*  Copyright 2023  Ruslan Toloshnyi  (email: ruslantoloshnyi@gmail.com)
 
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
+?>
+
+<?php
 defined('ABSPATH') || exit;
 
 define('RT_SLIDER__PLUGIN_DIR', plugin_dir_path(__FILE__));
@@ -60,7 +81,7 @@ add_action('wp_enqueue_scripts', 'salcodes_enqueue_scripts');
 // Register plugin page
 function rt_slider_register_menu()
 {
-  add_menu_page('RT My Slider', 'RT My Slider', 'manage_options', 'rt-my-slider', 'rt_slider_page');
+  add_menu_page('RT My Slider', 'RT My Slider', 'manage_options', 'rt-my-slider', 'rt_slider_page', 'dashicons-controls-play');
 }
 add_action('admin_menu', 'rt_slider_register_menu');
 
@@ -113,6 +134,8 @@ function rt_slider_handler_callback()
 add_action('wp_ajax_rt_slider', 'rt_slider_handler_callback');
 add_action('wp_ajax_nopriv_rt_slider', 'rt_slider_handler_callback');
 
+
+// add users image and remove buttons
 function rt_slider_review_image()
 {
 ?>
