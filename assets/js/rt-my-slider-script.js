@@ -3,9 +3,9 @@
 const slider_select = document.querySelector('#slider-select');
 const slider_image = document.querySelector('.slider-image img');
 const btn_remove = document.querySelectorAll('.btn-remove-img');
-const slide_uploads_img = document.querySelectorAll('.slide img');
+const slide_uploads_img = document.querySelectorAll('.review-block img');
 const review_blocks = document.querySelectorAll('.review-block');
-const slider_with_controls = document.querySelector('.slider-with-controls');
+const slider_with_controls = document.querySelector('.rt-slider-with-controls');
 const slider_with_indicators = document.querySelector('.slider-with-indicators');
 const slider_image_div = document.querySelector('.slider-image');
 const shortcode = document.querySelector('.shortcode-review');

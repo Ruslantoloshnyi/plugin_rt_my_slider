@@ -57,7 +57,7 @@ register_activation_hook(__FILE__, 'rt_slider_create_table');
 function rt_slider_enqueue_scripts()
 {
   wp_enqueue_style('rt-slider-style', plugin_dir_url(__FILE__) . 'assets/css/rt-my-slider-style.css');
-  wp_enqueue_style('rt-slider1-style', plugin_dir_url(__FILE__) . 'assets/css/rt-slider1-style.css');
+  wp_enqueue_style('rt-slider1-style', plugin_dir_url(__FILE__) . 'assets/css/rt-slider-with-controls-style.css');
   wp_enqueue_style('rt-slider-with-indicators-style', plugin_dir_url(__FILE__) . 'assets/css/rt-slider-with-indicators-style.css');
   wp_enqueue_script('rt-slider-script', plugin_dir_url(__FILE__) . 'assets/js/rt-my-slider-script.js', array('jquery'), '1.0', true);
   wp_enqueue_script('rt-slider1-script', plugin_dir_url(__FILE__) . 'assets/js/rt-slider1-script.js', array('jquery'), '1.0', true);
@@ -70,7 +70,7 @@ add_action('admin_init', 'rt_slider_enqueue_scripts');
 //Register style and scrypt for shortcode
 function salcodes_enqueue_scripts()
 {  
-    wp_register_style('salcodes-with-controls-style', plugin_dir_url(__FILE__) . 'assets/css/rt-slider1-style.css');
+    wp_register_style('salcodes-with-controls-style', plugin_dir_url(__FILE__) . 'assets/css/rt-slider-with-controls-style.css');
     wp_register_style('salcodes-with-indicators-style', plugin_dir_url(__FILE__) . 'assets/css/rt-slider-with-indicators-style.css');
     wp_register_script('salcodes-with-controls-scripts', plugin_dir_url(__FILE__) . 'assets/js/rt-slider1-script.js', array('jquery'), '1.0', true);
     wp_register_script('salcodes-with-indicators-scripts', plugin_dir_url(__FILE__) . 'assets/js/rt-slider-with-indicators-script.js', array('jquery'), '1.0', true);  

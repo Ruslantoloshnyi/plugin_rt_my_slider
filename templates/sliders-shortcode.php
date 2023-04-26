@@ -14,18 +14,18 @@ function rt_slider_with_controls_shortcode() {
 
     // Output slider HTML   
 ?>
-    <div class="slider-with-controls">
-        <div class="slider">
-            <div class="slider-list">
-                <div class="slider-track">
+    <div class="rt-slider-with-controls">
+        <div class="rt-slider">
+            <div class="rt-slider-list">
+                <div class="rt-slider-track">
                     <?php foreach ($slides as $slide) : ?>
-                        <div class="slide"><img src="<?php echo $slide->path; ?>" alt=""></div>
+                        <div class="rt-slide"><img src="<?php echo $slide->path; ?>" alt=""></div>
                     <?php endforeach; ?>
                 </div>
             </div>
-            <div class="slider-arrows">
-                <button type="button" class="prev">&lt;</button>
-                <button type="button" class="next">&gt;</button>
+            <div class="rt-slider-arrows">
+                <button type="button" class="rt-prev">&lt;</button>
+                <button type="button" class="rt-next">&gt;</button>
             </div>
         </div>
     </div>

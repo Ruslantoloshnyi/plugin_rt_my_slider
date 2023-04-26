@@ -1,12 +1,12 @@
 "use strict"
 
 // Selecting DOM elements
-const slider = document.querySelector('.slider');
-const slider_list = document.querySelector('.slider-list');
-const slider_track = document.querySelector('.slider-track');
-const slide = document.querySelectorAll('.slide');
-const btnPrev = document.querySelector('.prev');
-const btnNext = document.querySelector('.next');
+const slider = document.querySelector('.rt-slider');
+const slider_list = document.querySelector('.rt-slider-list');
+const slider_track = document.querySelector('.rt-slider-track');
+const slide = document.querySelectorAll('.rt-slide');
+const btnPrev = document.querySelector('.rt-prev');
+const btnNext = document.querySelector('.rt-next');
 
 // Cloning first slide and appending it to the end of the track
 const firstSlideClone = slider_track.firstElementChild.cloneNode(true);

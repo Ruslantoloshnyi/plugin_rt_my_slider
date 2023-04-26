@@ -1,10 +1,10 @@
 /* Slider styles */
 
-.slider {    
+.rt-slider {    
     position: relative;    
 }
 
-.slider-list {
+.rt-slider-list {
     width: 100%;
     height: 100%;
     display: flex;
@@ -16,22 +16,22 @@
     -webkit-overflow-scrolling: touch;   
 }
 
-.slider-track {
+.rt-slider-track {
     display: flex;
 }
 
-.slide {
+.rt-slide {
     flex: 0 0 100%;
     scroll-snap-align: start;
 }
 
-.slide img {
+.rt-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.slider-arrows {
+.rt-slider-arrows {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -41,7 +41,7 @@
     z-index: 1;
 }
 
-.prev, .next {
+.rt-prev, .rt-next {
     background: transparent;
     border: none;
     font-size: 4rem;
@@ -52,7 +52,7 @@
 }
 
 @media (max-width: 425px) {
-    .next, .prev {
+    .rt-next, .rt-prev {
         font-size: 2rem;
     }
 }
